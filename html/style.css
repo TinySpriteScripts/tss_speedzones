@@ -1,0 +1,44 @@
+:root {
+  --sk-font-display: 'Permanent Marker', cursive;
+  --sk-font-body: 'Bebas Neue', sans-serif;
+  --sk-font-ui: 'Inter', system-ui, sans-serif;
+  --sk-color-chalk: #f5f0e6;
+  --sk-color-spray: #ffd147;
+  --sk-color-danger: #ff6b6b;
+  --sk-text-soft: rgba(255,255,255,.45);
+  --sk-border-panel: rgba(255,255,255,.14);
+  --sk-panel-bg-a: rgba(12,10,14,.92);
+  --sk-shadow-panel-inset: inset 0 2px 0 rgba(255,255,255,.07);
+  --sk-shadow-panel-drop: 0 18px 56px rgba(0,0,0,.4);
+  --sk-space-shell: clamp(1.5rem,2.75vmin,4rem);
+  font-size: 125%;
+}
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: transparent; user-select: none; }
+.hidden { display: none !important; }
+.ev-timer { position: absolute; top: var(--sk-space-shell); right: var(--sk-space-shell); text-align: right; pointer-events: none; z-index: 800; }
+.ev-timer-time { font: clamp(2rem,4vw,3.5rem)/1 var(--sk-font-body); color: var(--sk-color-chalk); text-shadow: 0 2px 12px rgba(0,0,0,.8); letter-spacing: .04em; }
+.ev-timer-goal { font: clamp(.75rem,1.2vw,1rem) var(--sk-font-ui); color: var(--sk-text-soft); letter-spacing: .08em; margin-top: .2em; }
+.ev-timer-goal.is-ahead { color: #5ddf5d; }
+.ev-timer-goal.is-behind { color: var(--sk-color-danger); }
+.ev-timer-meta { display: flex; flex-direction: column; align-items: flex-end; gap: .25rem; margin-top: .45rem; }
+.ev-timer-progress { padding: .28rem .6rem; border: 1px solid rgba(255,209,71,.18); background: rgba(8,7,11,.7); font: clamp(.72rem,1vw,.92rem) var(--sk-font-ui); letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.88); }
+.ev-results { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 2rem; background: radial-gradient(circle at top,rgba(255,209,71,.08),transparent 40%),rgba(0,0,0,.62); z-index: 850; }
+.ev-results-panel { background: var(--sk-panel-bg-a); border: 1px solid var(--sk-border-panel); box-shadow: var(--sk-shadow-panel-inset),var(--sk-shadow-panel-drop); width: min(760px,calc(100vw - 4rem)); padding: 2rem; animation: results-in .3s cubic-bezier(.33,1,.68,1); }
+@keyframes results-in { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: none; } }
+.ev-results-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.5rem; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 1rem; }
+.ev-results-kicker,.ev-results-section-kicker { font: 600 .72rem var(--sk-font-ui); letter-spacing: .15em; color: var(--sk-color-spray); }
+.ev-results-name { margin: .2rem 0 0; font: 2.25rem var(--sk-font-display); color: var(--sk-color-chalk); }
+.ev-results-verdict { padding: .45rem .75rem; border: 1px solid currentColor; font: 600 .8rem var(--sk-font-ui); letter-spacing: .12em; white-space: nowrap; }
+.ev-results-verdict.is-pass { color: #5ddf5d; }
+.ev-results-verdict.is-fail { color: var(--sk-color-danger); }
+.ev-results-time-card { margin-top: 1.25rem; padding: 1.3rem; text-align: center; border: 1px solid rgba(255,209,71,.2); background: rgba(8,7,11,.54); }
+.ev-results-time-label,.ev-results-goal { display: block; font: .75rem var(--sk-font-ui); letter-spacing: .13em; color: var(--sk-text-soft); }
+.ev-results-time { margin: .25rem 0; font: clamp(3rem,7vw,5.5rem)/1 var(--sk-font-body); letter-spacing: .04em; color: var(--sk-color-chalk); }
+.ev-results-rewards { margin-top: 1.2rem; }
+.ev-results-reward-grid { display: grid; gap: .45rem; margin-top: .65rem; }
+.ev-results-reward-row { display: flex; justify-content: space-between; padding: .65rem .8rem; background: rgba(255,255,255,.045); border-left: 2px solid var(--sk-color-spray); }
+.ev-results-reward-label { font: 600 .76rem var(--sk-font-ui); letter-spacing: .1em; color: rgba(255,255,255,.65); }
+.ev-results-reward-value { font: 1rem var(--sk-font-body); letter-spacing: .06em; color: var(--sk-color-spray); }
+.ev-results-hint { margin: 1.25rem 0 0; text-align: center; font: .72rem var(--sk-font-ui); letter-spacing: .08em; color: var(--sk-text-soft); }
+.ev-results-hint kbd { margin: 0 .18rem; padding: .15rem .4rem; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: var(--sk-color-chalk); font: inherit; }

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="timer" class="ev-timer hidden">
+    <div id="speed" class="ev-timer-time">0 MPH</div>
+    <div id="goal" class="ev-timer-goal">TARGET 0 MPH</div>
+    <div class="ev-timer-meta">
+      <div id="progress" class="ev-timer-progress">CHECKPOINT 1 / 1</div>
+    </div>
+  </div>
+  <div id="results" class="ev-results hidden">
+    <div class="ev-results-panel">
+      <div class="ev-results-head">
+        <div><span id="kicker" class="ev-results-kicker">SPEED ZONE COMPLETE</span><h2 id="name" class="ev-results-name"></h2></div>
+        <div id="verdict" class="ev-results-verdict"></div>
+      </div>
+      <div class="ev-results-time-card">
+        <span class="ev-results-time-label">AVERAGE SPEED</span>
+        <div id="average" class="ev-results-time">0 MPH</div>
+        <div id="target" class="ev-results-goal">TARGET 0 MPH</div>
+      </div>
+      <div id="rewards" class="ev-results-rewards hidden">
+        <div class="ev-results-section-kicker">REWARDS</div>
+        <div id="rewardRows" class="ev-results-reward-grid"></div>
+      </div>
+      <p class="ev-results-hint">Press <kbd>E</kbd> to continue</p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+
